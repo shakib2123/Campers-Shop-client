@@ -1,9 +1,9 @@
-import Header from "../../components/layout/Header";
+import Navbar from "../../components/layout/Navbar";
 
 const HomePage = () => {
   return (
     <div>
-      <Header />
+      <Navbar />
     </div>
   );
 };
