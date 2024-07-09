@@ -56,8 +56,8 @@ const MobileMenu = () => {
               <NavLink
                 key={route.path}
                 className={({ isActive }) =>
-                  ` text-lg font-medium text-gray-800 hover:text-orange-500 py-3 hover:border-b-2 hover:border-orange-500 ${
-                    isActive ? "text-orange-500" : ""
+                  ` text-lg font-medium text-gray-800 hover:text-green-500 py-3 hover:border-b-2 hover:border-green-500 ${
+                    isActive ? "text-green-500" : ""
                   }`
                 }
                 to={route.path}

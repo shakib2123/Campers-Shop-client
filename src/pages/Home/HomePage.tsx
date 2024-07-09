@@ -3,6 +3,7 @@ import HeroSection from "../../components/layout/HeroSection";
 import Navbar from "../../components/layout/Navbar";
 import TestimonialSection from "@/components/testimonial/TestimonialSection";
 import Footer from "@/components/layout/Footer";
+import FAQSection from "@/components/FAQ/FAQSection";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         {/* Todo: Best Selling Products */}
         <CategorySection />
         <TestimonialSection />
+        <FAQSection />
       </div>
       <Footer />
     </div>

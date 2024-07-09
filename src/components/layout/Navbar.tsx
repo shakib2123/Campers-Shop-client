@@ -25,21 +25,11 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-6">
-          {/* <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "text-orange-500 border-b-2 border-orange-500 font-medium"
-                : "text-gray-100 hover:text-orange-500 hover:border-b-2 font-medium hover:border-orange-500"
-            }
-            to="/contact-us"
-          >
-            Contact Us
-          </NavLink> */}
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-orange-500 border-b-2 border-orange-500 font-medium"
-                : "text-gray-100 hover:text-orange-500 hover:border-b-2 font-medium hover:border-orange-500"
+                ? "text-green-500 border-b-2 border-green-500 font-medium"
+                : "text-gray-100 hover:text-green-500 hover:border-b-2 font-medium hover:border-green-500"
             }
             to="/products"
           >
@@ -49,8 +39,8 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-orange-500 border-b-2 border-orange-500 font-medium"
-                : "text-gray-100 hover:text-orange-500 hover:border-b-2 font-medium hover:border-orange-500"
+                ? "text-green-500 border-b-2 border-green-500 font-medium"
+                : "text-gray-100 hover:text-green-500 hover:border-b-2 font-medium hover:border-green-500"
             }
             to="/about"
           >
@@ -62,8 +52,8 @@ const Navbar = () => {
             className={({ isActive }) =>
               `font-medium flex items-center gap-1 ${
                 isActive
-                  ? "text-orange-500"
-                  : "text-gray-100 hover:text-orange-500"
+                  ? "text-green-500"
+                  : "text-gray-100 hover:text-green-500"
               }`
             }
             to="/cart"
@@ -88,8 +78,8 @@ const Navbar = () => {
             className={({ isActive }) =>
               `font-medium flex items-center gap-1 ${
                 isActive
-                  ? "text-orange-500"
-                  : "text-gray-100 hover:text-orange-500"
+                  ? "text-green-500"
+                  : "text-gray-100 hover:text-green-500"
               }`
             }
             to="/wishlist"
