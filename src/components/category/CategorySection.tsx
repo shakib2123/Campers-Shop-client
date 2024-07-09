@@ -46,7 +46,7 @@ const categoryData = [
 
 const CategorySection = () => {
   return (
-    <section className="my-16  px-3 lg:px-0 ">
+    <section className="my-20 lg:my-28  px-3 lg:px-0 ">
       <div className="mx-auto text-center max-w-3xl mb-8 space-y-2">
         <p className="text-orange-500 font-semibold text-sm md:text-lg">
           MEET THE FAMILY

@@ -1,6 +1,7 @@
 import CategorySection from "@/components/category/CategorySection";
 import HeroSection from "../../components/layout/HeroSection";
 import Navbar from "../../components/layout/Navbar";
+import TestimonialSection from "@/components/testimonial/TestimonialSection";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
         <HeroSection />
         {/* Todo: Best Selling Products */}
         <CategorySection />
+        <TestimonialSection />
       </div>
     </div>
   );
