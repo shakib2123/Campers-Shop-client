@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import mountainImage from "../../assets/images/mountain-img.png";
+import logo from "../../assets/images/logo.png";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
@@ -16,10 +16,10 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2">
             <img
               className="max-w-9 lg:max-w-14"
-              src={mountainImage}
+              src={logo}
               alt="mountain-image"
             />
-            <h2 className="font-bold text-lg md:text-xl lg:text-3xl text-gray-200">
+            <h2 className="font-bold text-lg md:text-xl lg:text-3xl text-orange-500">
               Campers Shop
             </h2>
           </Link>
