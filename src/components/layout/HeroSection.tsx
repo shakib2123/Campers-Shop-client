@@ -38,14 +38,17 @@ const HeroSection = () => {
       style={{
         backgroundImage: `url(${sliderImage1})`,
       }}
-      className="h-[400px] md:h-[520px] lg:h-[600px] bg-cover bg-center bg-no-repeat md:mt-2 lg:rounded-lg "
+      className="h-[450px] md:h-[620px] bg-cover bg-center bg-no-repeat lg:mt-2 lg:rounded-lg "
     >
-      <div className="bg-gradient-to-r from-black h-[400px] md:h-[500px] lg:h-[600px] w-full lg:flex items-center justify-center gap-9">
+      <div className="bg-gradient-to-r from-black to-black/20 h-[400px] md:h-[620px] w-full lg:flex items-center justify-center gap-9">
         <div className="flex-1 p-4 space-y-4 flex flex-col items-center justify-center">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-gray-100">
-            Camping
+          <p className="text-orange-500 font-semibold text-sm md:text-xl">
+            OUTDOOR EXPLORATION
+          </p>
+          <h1 className="text-3xl md:text-5xl font-medium text-gray-100 font-young-serif">
+            Gear for when it <br /> actually matters.
           </h1>
-          <p className="lg:text-lg text-gray-300 max-w-lg">
+          <p className="lg:text-lg text-gray-300 max-w-lg text-center">
             Create your dream campsite with our camping essentials. Under the
             stars, every night is an adventure waiting to unfold.
           </p>
