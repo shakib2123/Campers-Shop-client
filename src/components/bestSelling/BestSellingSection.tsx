@@ -1,5 +1,7 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
 import ProductCart from "../ProductCart/ProductCart";
+import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 const BestSellingSection = () => {
   const { data, isLoading } = useGetProductsQuery(undefined);
@@ -34,6 +36,12 @@ const BestSellingSection = () => {
               .map((product) => (
                 <ProductCart key={product._id} product={product} />
               ))}
+      </div>
+
+      <div className="flex justify-center">
+        <Link to="/products">
+          <Button className="bg-green-500 hover:bg-green-600">View more</Button>
+        </Link>
       </div>
     </div>
   );

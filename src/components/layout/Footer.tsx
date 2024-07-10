@@ -35,7 +35,7 @@ const Footer = () => {
                     placeholder="Enter your email address..."
                   />
                   <Button
-                    className="bg-green-500 hover:bg-green-300 w-36"
+                    className="bg-green-500 hover:bg-green-600 w-36"
                     type="submit"
                   >
                     SUBSCRIBE

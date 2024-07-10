@@ -1,9 +1,11 @@
+import ProductsBanner from "@/components/products/Banner";
 import SearchBar from "@/components/products/SearchBar";
 
 const ProductPage = () => {
   return (
     <section>
-      <SearchBar />
+      <ProductsBanner />
+      {/* <SearchBar /> */}
     </section>
   );
 };
