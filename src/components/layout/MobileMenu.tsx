@@ -10,17 +10,17 @@ import {
 import { NavLink } from "react-router-dom";
 
 const routes = [
-  //   {
-  //     path: "/",
-  //     name: "Home",
-  //   },
   {
     path: "/products",
     name: "Products",
   },
   {
-    path: "/about",
+    path: "/about-us",
     name: "About Us",
+  },
+  {
+    path: "/product-management",
+    name: "Product Management",
   },
 ];
 
