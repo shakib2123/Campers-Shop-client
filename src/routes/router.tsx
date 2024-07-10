@@ -3,6 +3,7 @@ import AboutPage from "@/pages/About/AboutPage";
 import HomePage from "@/pages/Home/HomePage";
 import CreateProduct from "@/pages/ProductManagement/CreateProduct";
 import ProductManagement from "@/pages/ProductManagement/ProductManagement";
+import UpdateProduct from "@/pages/ProductManagement/UpdateProduct";
 import ProductPage from "@/pages/Products/ProductPage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -27,6 +28,10 @@ export const router: ReturnType<typeof createBrowserRouter> =
         {
           path: "create-product",
           element: <CreateProduct />,
+        },
+        {
+          path: "update-product/:id",
+          element: <UpdateProduct />,
         },
         {
           path: "about-us",
