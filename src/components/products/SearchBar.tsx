@@ -6,7 +6,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
@@ -24,7 +23,7 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto px-3 py-4 flex justify-between items-center ">
+      <div className="max-w-screen-xl mx-auto px-3 py-4 flex flex-col md:flex-row gap-4 justify-between items-center ">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex w-full  max-w-sm items-center"
@@ -52,11 +51,11 @@ const SearchBar = () => {
             </svg>
           </Button>
         </form>
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-2 md:gap-4">
           <div>
             <Select onValueChange={(value: string) => setSortValue(value)}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a fruit" />
+              <SelectTrigger className="w-[100px]">
+                <SelectValue placeholder="Filter" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -69,8 +68,8 @@ const SearchBar = () => {
           </div>
           <div>
             <Select onValueChange={(value: string) => setSortValue(value)}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a fruit" />
+              <SelectTrigger className="w-[100px]">
+                <SelectValue placeholder="Sort By" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -81,7 +80,11 @@ const SearchBar = () => {
               </SelectContent>
             </Select>
           </div>
-          <div></div>
+          <div>
+            <Button variant={"outline"} className="bg-gray-100">
+              Reset All
+            </Button>
+          </div>
         </div>
       </div>
     </div>
