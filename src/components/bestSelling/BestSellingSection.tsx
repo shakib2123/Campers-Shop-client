@@ -11,7 +11,7 @@ const BestSellingSection = () => {
   }
 
   return (
-    <div className=" mt-28 space-y-16">
+    <div className=" mt-28 space-y-16  px-3 lg:px-0">
       <div className="mx-auto text-center max-w-3xl mb-8 space-y-2">
         <p className="text-orange-500 font-semibold text-sm md:text-lg">
           Best Selling
@@ -26,13 +26,13 @@ const BestSellingSection = () => {
           and see why they're our customers' favorites.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-6 min-h-80 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-80 ">
         {isLoading
           ? loadingState
           : data?.data
               ?.slice(0, 4)
               .map((product) => (
-                <ProductCart key={product.id} product={product} />
+                <ProductCart key={product._id} product={product} />
               ))}
       </div>
     </div>

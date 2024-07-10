@@ -3,6 +3,7 @@ import HeroSection from "../../components/layout/HeroSection";
 import TestimonialSection from "@/components/testimonial/TestimonialSection";
 import FAQSection from "@/components/FAQ/FAQSection";
 import BestSellingSection from "@/components/bestSelling/BestSellingSection";
+import FeaturedSection from "@/components/featured/FeaturedSection";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,9 @@ const HomePage = () => {
         <HeroSection />
         <BestSellingSection />
         <CategorySection />
-        {/* Todo: Featured Products */}
+      </div>
+      <FeaturedSection />
+      <div className="max-w-screen-xl mx-auto">
         <TestimonialSection />
         <FAQSection />
       </div>

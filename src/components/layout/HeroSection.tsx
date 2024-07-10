@@ -41,7 +41,7 @@ const HeroSection = () => {
       }}
       className="h-[450px] md:h-[620px] bg-cover bg-center bg-no-repeat lg:mt-2 lg:rounded-lg "
     >
-      <div className="bg-gradient-to-r from-black to-black/20 h-[400px] md:h-[620px] w-full lg:flex items-center justify-center gap-9 rounded-lg">
+      <div className="bg-gradient-to-r from-black to-black/20 h-[400px] md:h-[620px] w-full lg:flex items-center justify-center gap-9 lg:rounded-lg">
         <div className="flex-1 p-4 space-y-4 flex flex-col items-center justify-center">
           <p className="text-orange-500 font-semibold text-sm md:text-xl">
             OUTDOOR EXPLORATION
