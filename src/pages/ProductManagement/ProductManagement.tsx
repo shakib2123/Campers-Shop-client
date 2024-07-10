@@ -75,10 +75,10 @@ const ProductManagement = () => {
             </Button>
           </Link>
           <h2 className="text-xl text-gray-700 font-bold">
-            Total Product: {data?.data?.length}
+            Total: {data?.data?.length}
           </h2>
         </div>
-        <Table className="p-12">
+        <Table className="p-12 min-w-[570px] md:w-full">
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Image</TableHead>

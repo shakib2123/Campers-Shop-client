@@ -13,6 +13,7 @@ import sliderImage2 from "../../assets/images/ClassicAir.webp";
 import sliderImage3 from "../../assets/images/Classic_Instant.webp";
 import sliderImage4 from "../../assets/images/Lismore.webp";
 import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const sliderData = [
@@ -52,7 +53,9 @@ const HeroSection = () => {
             Create your dream campsite with our camping essentials. Under the
             stars, every night is an adventure waiting to unfold.
           </p>
-          <Button variant={"secondary"}>Shop Now</Button>
+          <Link to="/products">
+            <Button variant={"secondary"}>Shop Now</Button>
+          </Link>
         </div>
         <div className="flex-1 relative w-full h-[150px] md:h-[300px] lg:h-[400px] px-2 lg:p-0 lg:mr-4">
           <Carousel

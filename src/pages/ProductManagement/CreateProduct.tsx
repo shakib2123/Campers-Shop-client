@@ -24,10 +24,9 @@ const CreateProduct = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    setLoading(true);
     const formData = new FormData();
     formData.append("image", data.image[0]);
-
+    setLoading(true);
     const response = await fetch(url, {
       method: "POST",
       body: formData,
