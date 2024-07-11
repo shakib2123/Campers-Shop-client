@@ -1,4 +1,5 @@
 import AboutBanner from "@/components/about/AboutBanner";
+import Contact from "@/components/about/Contact";
 import GoogleMap from "@/components/about/GoogleMap";
 
 const AboutPage = () => {
@@ -6,7 +7,7 @@ const AboutPage = () => {
     <div className="min-h-[calc(100vh-100px)]">
       <AboutBanner />
 
-      {/* TODO: Contact Information */}
+      <Contact />
 
       <GoogleMap />
     </div>
