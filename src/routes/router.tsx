@@ -1,5 +1,7 @@
 import App from "@/App";
 import AboutPage from "@/pages/About/AboutPage";
+import CartPage from "@/pages/Cart/CartPage";
+import Checkout from "@/pages/Checkout/Checkout";
 import HomePage from "@/pages/Home/HomePage";
 import ProductDetails from "@/pages/ProductDetails/ProductDetails";
 import CreateProduct from "@/pages/ProductManagement/CreateProduct";
@@ -13,6 +15,7 @@ export const router: ReturnType<typeof createBrowserRouter> =
     {
       path: "/",
       element: <App />,
+      // TODO : there will be a error page
       children: [
         {
           path: "/",
@@ -41,6 +44,14 @@ export const router: ReturnType<typeof createBrowserRouter> =
         {
           path: "about-us",
           element: <AboutPage />,
+        },
+        {
+          path: "cart",
+          element: <CartPage />,
+        },
+        {
+          path: "checkout",
+          element: <Checkout />,
         },
       ],
     },

@@ -99,7 +99,7 @@ const ProductManagement = () => {
                   />
                 </TableCell>
                 <TableCell className="text-sm">{item.name}</TableCell>
-                <TableCell>{item.price}</TableCell>
+                <TableCell>$ {item.price} USD</TableCell>
                 <TableCell>{item.category}</TableCell>
                 <TableCell className="text-right space-x-2">
                   <Link to={`/update-product/${item._id}`}>

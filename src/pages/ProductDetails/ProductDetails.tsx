@@ -27,7 +27,7 @@ const ProductDetails = () => {
     const res = await updateProduct(updatedInfo).unwrap();
 
     console.log("Response data:", res);
-    const { stock, quantity: oldQuantity, ...otherData } = data.data;
+    const { quantity: oldQuantity, ...otherData } = data.data;
 
     const cartData = {
       ...otherData,
