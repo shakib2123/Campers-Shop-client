@@ -6,36 +6,31 @@ import { useParams } from "react-router-dom";
 import Rating from "react-rating";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAppDispatch } from "@/redux/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { addToCart } from "@/redux/features/CartSlice";
+import { toast } from "sonner";
 
 const ProductDetails = () => {
   const { id } = useParams();
 
   const { data, isLoading } = useGetSingleProductQuery(id);
 
-  const [updateProduct] = useUpdateProductMutation();
-
   const dispatch = useAppDispatch();
+  const cart = useAppSelector((state) => state.cart);
+  const currentProduct = cart?.find((item) => item._id === id);
+  // console.log(currentProduct);
 
   const handleAddToCart = async () => {
-    const updatedInfo = {
-      id,
-      updatedData: { quantity: data?.data?.quantity - 1 },
-    };
-
-    const res = await updateProduct(updatedInfo).unwrap();
-
-    console.log("Response data:", res);
     const { quantity: oldQuantity, ...otherData } = data.data;
 
     const cartData = {
       ...otherData,
       quantity: 1,
     };
-    console.log(cartData);
 
     dispatch(addToCart(cartData));
+
+    toast.success("Product added to cart");
   };
   if (isLoading) {
     return <div>Loading...</div>;
@@ -138,7 +133,10 @@ const ProductDetails = () => {
           <div>
             <Button
               onClick={handleAddToCart}
-              disabled={!data?.data?.stock || data?.data?.quantity <= 0}
+              disabled={
+                !data?.data?.stock ||
+                data?.data?.quantity === currentProduct?.quantity
+              }
               className="w-full  bg-green-500 hover:bg-green-600 mt-4"
             >
               Add To Cart

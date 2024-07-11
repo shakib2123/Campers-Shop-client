@@ -3,6 +3,7 @@ import AboutPage from "@/pages/About/AboutPage";
 import CartPage from "@/pages/Cart/CartPage";
 import Checkout from "@/pages/Checkout/Checkout";
 import HomePage from "@/pages/Home/HomePage";
+import OrderSuccess from "@/pages/OrderSuccess/OrderSuccess";
 import ProductDetails from "@/pages/ProductDetails/ProductDetails";
 import CreateProduct from "@/pages/ProductManagement/CreateProduct";
 import ProductManagement from "@/pages/ProductManagement/ProductManagement";
@@ -52,6 +53,10 @@ export const router: ReturnType<typeof createBrowserRouter> =
         {
           path: "checkout",
           element: <Checkout />,
+        },
+        {
+          path: "order-success",
+          element: <OrderSuccess />,
         },
       ],
     },

@@ -8,10 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  useGetProductsQuery,
-  useUpdateProductMutation,
-} from "@/redux/api/baseApi";
+import { useGetProductsQuery } from "@/redux/api/baseApi";
 import {
   decreaseQuantity,
   deleteItem,
@@ -19,61 +16,24 @@ import {
 } from "@/redux/features/CartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { Link } from "react-router-dom";
-import { toast } from "sonner";
 import Swal from "sweetalert2";
 
 const CartPage = () => {
   const { data: products, isLoading } = useGetProductsQuery(undefined);
-  console.log(products);
 
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-
-  const [updateProduct] = useUpdateProductMutation();
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  const handleDecreaseQuantity = async (id: string) => {
-    const productData = products.data.find((item) => item._id === id);
-
-    const updatedInfo = {
-      id,
-      updatedData: { quantity: productData?.quantity + 1 },
-    };
-
-    const result = await updateProduct(updatedInfo).unwrap();
-    if (result?.success) {
-      dispatch(decreaseQuantity(id));
-      toast.success("Quantity decreased successfully");
-    } else {
-      toast.error("Failed to decrease quantity");
-    }
+  const isDisabled = (item) => {
+    const result = products.data.find((data) => data._id === item._id);
+    return result.quantity === item.quantity || result.stock === false;
   };
 
-  const handleIncreaseQuantity = async (id: string) => {
-    const productData = products.data.find((item) => item._id === id);
-
-    if (productData?.quantity < 1 || productData?.stock === false) {
-      toast.error("Product out of stock");
-      return;
-    }
-
-    const updatedInfo = {
-      id,
-      updatedData: { quantity: productData?.quantity - 1 },
-    };
-
-    const result = await updateProduct(updatedInfo).unwrap();
-    if (result?.success) {
-      dispatch(increaseQuantity(id));
-      toast.success("Quantity increased successfully");
-    } else {
-      toast.error("Failed to increase quantity");
-    }
-  };
   const handleDeleteItem = (id: string) => {
     Swal.fire({
       title: "Are you sure?",
@@ -136,7 +96,7 @@ const CartPage = () => {
                   </TableCell>
                   <TableCell className="flex items-center gap-3">
                     <Button
-                      onClick={() => handleDecreaseQuantity(item._id)}
+                      onClick={() => dispatch(decreaseQuantity(item._id))}
                       disabled={item.quantity === 1}
                       className="border border-gray-300"
                       variant={"ghost"}
@@ -160,8 +120,8 @@ const CartPage = () => {
                       {item.quantity}
                     </p>
                     <Button
-                      onClick={() => handleIncreaseQuantity(item._id)}
-                      //   disabled={}
+                      onClick={() => dispatch(increaseQuantity(item._id))}
+                      disabled={isDisabled(item)}
                       variant={"ghost"}
                       className="border border-gray-300"
                     >
