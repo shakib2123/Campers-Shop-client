@@ -1,12 +1,11 @@
-import { LucideFacebook } from "lucide-react";
-import contactBG from "../../assets/images/social-media-bg.webp";
+import socialBG from "../../assets/images/social-media-bg.webp";
 import { Link } from "react-router-dom";
 
-const Contact = () => {
+const Social = () => {
   return (
     <section className="px-3 max-w-screen-xl mx-auto">
       <div
-        style={{ backgroundImage: `url(${contactBG})` }}
+        style={{ backgroundImage: `url(${socialBG})` }}
         className="h-[300px] md:h-[500px] my-20 lg:my-28 bg-cover bg-center bg-no-repeat flex items-center justify-center   rounded-lg "
       >
         <div className="bg-black/40 h-full w-full flex flex-col justify-end py-10  rounded-lg">
@@ -73,4 +72,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Social;

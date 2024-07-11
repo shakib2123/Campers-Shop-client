@@ -6,7 +6,7 @@ const GoogleMap = () => {
           Our Location
         </h2>
       </div>
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
+      <div className="flex flex-col-reverse md:flex-row justify-between md:items-center">
         <div className="flex-1 space-y-10 mt-3 lg:mt-0">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
             Campers Shop Location
