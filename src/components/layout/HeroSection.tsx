@@ -69,7 +69,7 @@ const HeroSection = () => {
             <CarouselContent className="flex">
               {sliderData.map((slider) => (
                 <CarouselItem key={slider.id} className="min-w-full">
-                  <Card className="bg-transparent">
+                  <Card className="bg-transparent border-0">
                     <CardContent className="flex items-center justify-center h-[150px] md:h-[300px] lg:h-[400px] p-0">
                       <img
                         src={slider?.image}

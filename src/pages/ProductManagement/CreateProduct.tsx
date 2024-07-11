@@ -43,6 +43,7 @@ const CreateProduct = () => {
       image: imgData.data.url,
       quantity: data.quantity,
       category: data.category,
+      rating: data.rating,
     };
 
     try {
@@ -153,6 +154,29 @@ const CreateProduct = () => {
               <p className="text-red-500 text-sm">Quantity is required</p>
             )}
           </div>
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="rating" className="">
+              Rating
+            </Label>
+            <Input
+              type="number"
+              id="rating"
+              className=""
+              {...register("rating", { required: true, min: 1, max: 5 })}
+            />
+            {errors.rating?.type === "required" && (
+              <p className="text-red-500 text-sm ">Rating is required</p>
+            )}
+            {errors.rating?.type === "min" && (
+              <p className="text-red-500 text-sm ">Rating must be at least 1</p>
+            )}
+            {errors.rating?.type === "max" && (
+              <p className="text-red-500 text-sm ">
+                Rating must be no more than 5
+              </p>
+            )}
+          </div>
+
           <Button
             className="w-full bg-green-500 hover:bg-green-600"
             type="submit"

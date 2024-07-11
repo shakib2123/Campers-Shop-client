@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 
 const ProductCart = ({ product }) => {
@@ -43,9 +44,11 @@ const ProductCart = ({ product }) => {
           </div>
         </div>
 
-        <Button className="w-full bg-green-500 hover:bg-green-600">
-          See Details
-        </Button>
+        <Link to={`/products-details/${product?._id}`}>
+          <Button className="w-full bg-green-500 hover:bg-green-600">
+            See Details
+          </Button>
+        </Link>
       </div>
     </div>
   );

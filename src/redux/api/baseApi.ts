@@ -29,11 +29,13 @@ export const baseApi = createApi({
       providesTags: ["Products"],
     }),
     updateProduct: builder.mutation({
-      query: (data) => ({
-        url: `/products/${data.id}`,
-        method: "PUT",
-        body: data.updatedData,
-      }),
+      query: (data) => {
+        return {
+          url: `/products/${data.id}`,
+          method: "PUT",
+          body: data.updatedData,
+        };
+      },
       invalidatesTags: ["Products"],
     }),
 

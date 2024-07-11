@@ -1,6 +1,7 @@
 import App from "@/App";
 import AboutPage from "@/pages/About/AboutPage";
 import HomePage from "@/pages/Home/HomePage";
+import ProductDetails from "@/pages/ProductDetails/ProductDetails";
 import CreateProduct from "@/pages/ProductManagement/CreateProduct";
 import ProductManagement from "@/pages/ProductManagement/ProductManagement";
 import UpdateProduct from "@/pages/ProductManagement/UpdateProduct";
@@ -32,6 +33,10 @@ export const router: ReturnType<typeof createBrowserRouter> =
         {
           path: "update-product/:id",
           element: <UpdateProduct />,
+        },
+        {
+          path: "products-details/:id",
+          element: <ProductDetails />,
         },
         {
           path: "about-us",

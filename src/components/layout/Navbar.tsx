@@ -31,6 +31,16 @@ const Navbar = () => {
                 ? "text-green-500 border-b-2 border-green-500 font-medium"
                 : "text-gray-100 hover:text-green-500 hover:border-b-2 font-medium hover:border-green-500"
             }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "text-green-500 border-b-2 border-green-500 font-medium"
+                : "text-gray-100 hover:text-green-500 hover:border-b-2 font-medium hover:border-green-500"
+            }
             to="/products"
           >
             Products
@@ -42,9 +52,9 @@ const Navbar = () => {
                 ? "text-green-500 border-b-2 border-green-500 font-medium"
                 : "text-gray-100 hover:text-green-500 hover:border-b-2 font-medium hover:border-green-500"
             }
-            to="/about-us"
+            to="/product-management"
           >
-            About Us
+            Product Management
           </NavLink>
           <NavLink
             className={({ isActive }) =>
@@ -52,9 +62,9 @@ const Navbar = () => {
                 ? "text-green-500 border-b-2 border-green-500 font-medium"
                 : "text-gray-100 hover:text-green-500 hover:border-b-2 font-medium hover:border-green-500"
             }
-            to="/product-management"
+            to="/about-us"
           >
-            Product Management
+            About Us
           </NavLink>
         </div>
         <div className="flex items-center gap-4 md:gap-6">

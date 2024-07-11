@@ -23,7 +23,7 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto px-3 py-4 flex flex-col md:flex-row gap-4 justify-between items-center ">
+      <div className="max-w-screen-xl mx-auto py-4 flex flex-col md:flex-row gap-4 justify-between items-center ">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex w-full  max-w-sm items-center"
