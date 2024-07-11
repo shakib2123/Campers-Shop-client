@@ -4,6 +4,7 @@ import ContactUs from "@/components/about/ContactUs";
 import GoogleMap from "@/components/about/GoogleMap";
 import Mission from "@/components/about/Mission";
 import Social from "@/components/about/Social";
+import Team from "@/components/about/Team";
 
 const AboutPage = () => {
   return (
@@ -13,6 +14,7 @@ const AboutPage = () => {
       <GoogleMap />
       <Social />
       <Mission />
+      <Team />
     </div>
   );
 };
