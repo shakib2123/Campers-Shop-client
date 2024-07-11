@@ -1,6 +1,6 @@
-import bannerImage from "../../assets/images/Products-banner.jpg";
+import bannerImage from "../../assets/images/About-Hero.jpg";
 
-const ProductsBanner = () => {
+const AboutBanner = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bannerImage})` }}
@@ -9,10 +9,10 @@ const ProductsBanner = () => {
       <div className="bg-black/10 h-full w-full flex flex-col justify-end py-10">
         <div className="mx-auto text-center max-w-xl mb-8 space-y-2">
           <p className="text-orange-500 font-semibold text-sm md:text-lg">
-            Products
+            ABOUT US
           </p>
           <h2 className="text-3xl md:text-4xl text-gray-100 font-bold text-center font-young-serif">
-            Gear for every weather, every mood & every occasion.
+            How we ended up where we're at today (& where we're going).
           </h2>
         </div>
       </div>
@@ -20,4 +20,4 @@ const ProductsBanner = () => {
   );
 };
 
-export default ProductsBanner;
+export default AboutBanner;

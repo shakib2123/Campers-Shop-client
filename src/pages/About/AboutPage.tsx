@@ -1,7 +1,14 @@
+import AboutBanner from "@/components/about/AboutBanner";
+import GoogleMap from "@/components/about/GoogleMap";
+
 const AboutPage = () => {
   return (
-    <div>
-      <h1>This is AboutPage component</h1>
+    <div className="min-h-[calc(100vh-100px)]">
+      <AboutBanner />
+
+      {/* TODO: Contact Information */}
+
+      <GoogleMap />
     </div>
   );
 };
