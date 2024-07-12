@@ -84,7 +84,7 @@ const ProductDetails = () => {
               borderRadius: "10px",
               backgroundImage: `url(${data?.data?.image})`,
 
-              backgroundSize: "400%",
+              backgroundSize: "300%",
               backgroundPosition: `${position.x}% ${position.y}%`,
               zIndex: 10,
             }}
@@ -173,6 +173,11 @@ const ProductDetails = () => {
                 </svg>{" "}
                 {data?.data?.category}
               </p>
+            </div>
+            <div>
+              <h1 className="text-xl text-gray-700 font-bold">
+                Available quantity: {data?.data?.quantity}
+              </h1>
             </div>
           </div>
 
