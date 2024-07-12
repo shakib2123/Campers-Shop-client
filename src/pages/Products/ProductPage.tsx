@@ -7,7 +7,7 @@ const ProductPage = () => {
     <section>
       <ProductsBanner />
       <div className="max-w-screen-xl mx-auto px-3 lg:px-0">
-        <SearchBar />
+        {/* <SearchBar /> */}
         <Products />
       </div>
     </section>

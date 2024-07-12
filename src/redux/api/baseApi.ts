@@ -15,10 +15,13 @@ export const baseApi = createApi({
     }),
 
     getProducts: builder.query({
-      query: () => ({
-        url: "/products",
-        method: "GET",
-      }),
+      query: (query) => {
+        console.log(query);
+        return {
+          url: `/products?searchValue=${query?.search}&sort=${query?.sort}&category=${query?.category}&minPrice=${query?.minPrice}&maxPrice=${query?.maxPrice}`,
+          method: "GET",
+        };
+      },
       providesTags: ["Products"],
     }),
     getSingleProduct: builder.query({
