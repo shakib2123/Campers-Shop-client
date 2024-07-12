@@ -10,16 +10,21 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { addToCart } from "@/redux/features/CartSlice";
 import { toast } from "sonner";
 import Loader from "@/components/Loader/Loader";
+import { useState } from "react";
+import "./ImageMagnifier.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [showMagnifier, setShowMagnifier] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const { data, isLoading } = useGetSingleProductQuery(id);
 
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart);
   const currentProduct = cart?.find((item) => item._id === id);
-  // console.log(currentProduct);
 
   const handleAddToCart = async () => {
     const { quantity: oldQuantity, ...otherData } = data.data;
@@ -34,18 +39,57 @@ const ProductDetails = () => {
     toast.success("Product added to cart");
   };
 
+  const handleMouseHover = (e) => {
+    // Corrected the usage of getBoundingClientRect
+    const { left, top, width, height } =
+      e.currentTarget.getBoundingClientRect();
+
+    const x = ((e.pageX - left - window.scrollX) / width) * 100;
+    const y = ((e.pageY - top - window.scrollY) / height) * 100;
+    const cursorX = e.pageX - left - window.scrollX;
+    const cursorY = e.pageY - top - window.scrollY;
+
+    setPosition({ x, y });
+
+    setCursorPosition({ x: cursorX, y: cursorY });
+  };
+
   if (isLoading) {
     return <Loader height={"h-[600px]"} />;
   }
 
   return (
-    <section className="max-w-screen-xl min-h-[400px] mx-auto my-16 px-3 lg:px-12 flex flex-col md:flex-row items-center gap-12">
-      <div className="flex-1 overflow-hidden">
+    <section className="max-w-screen-lg min-h-[400px] mx-auto my-16 px-3 lg:px-12 flex flex-col md:flex-row items-center gap-12">
+      <div
+        className="flex-1 img-magnifier-container"
+        onMouseEnter={() => setShowMagnifier(true)}
+        onMouseLeave={() => setShowMagnifier(false)}
+        onMouseMove={handleMouseHover}
+      >
         <img
-          className="w-full max-h-[500px] rounded-lg"
+          className="rounded-lg magnifier-img w-full  "
           src={data?.data?.image}
           alt=""
         />
+        {showMagnifier && (
+          <div
+            style={{
+              position: "absolute",
+              left: `${cursorPosition.x - 100}px`,
+              top: `${cursorPosition.y - 100}px`,
+              pointerEvents: "none",
+              width: "200px",
+              height: "200px",
+              border: "2px solid #000",
+              borderRadius: "10px",
+              backgroundImage: `url(${data?.data?.image})`,
+
+              backgroundSize: "400%",
+              backgroundPosition: `${position.x}% ${position.y}%`,
+              zIndex: 10,
+            }}
+          ></div>
+        )}
       </div>
       <div className="flex-1 ">
         <div className="py-4 border-b border-gray-400 space-y-2">
