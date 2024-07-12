@@ -3,6 +3,7 @@ import AboutPage from "@/pages/About/AboutPage";
 import CartPage from "@/pages/Cart/CartPage";
 import Checkout from "@/pages/Checkout/Checkout";
 import HomePage from "@/pages/Home/HomePage";
+import NotFound from "@/pages/NotFound/NotFound";
 import OrderSuccess from "@/pages/OrderSuccess/OrderSuccess";
 import ProductDetails from "@/pages/ProductDetails/ProductDetails";
 import CreateProduct from "@/pages/ProductManagement/CreateProduct";
@@ -16,7 +17,7 @@ export const router: ReturnType<typeof createBrowserRouter> =
     {
       path: "/",
       element: <App />,
-      // TODO : there will be a error page
+      errorElement: <NotFound />,
       children: [
         {
           path: "/",
