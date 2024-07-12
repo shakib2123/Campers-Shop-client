@@ -2,18 +2,27 @@ const GoogleMap = () => {
   return (
     <section className="my-20 lg:my-28 px-3  min-h-[600px] max-w-screen-xl mx-auto">
       <div className="mb-5">
-        <h2 className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif"
+        >
           Our Location
         </h2>
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-between md:items-center">
         <div className="flex-1 space-y-10 mt-3 lg:mt-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+          <h2
+            data-aos="fade-up"
+            className="text-2xl md:text-3xl font-bold text-gray-800"
+          >
             Campers Shop Location
           </h2>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-700 flex gap-2">
+            <h3
+              data-aos="fade-up"
+              className="text-xl font-semibold text-gray-700 flex gap-2"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -30,10 +39,15 @@ const GoogleMap = () => {
               </svg>
               17 November - 22 November
             </h3>
-            <p className="text-gray-600">8:00 AM - 10:00 PM</p>
+            <p data-aos="fade-up" className="text-gray-600">
+              8:00 AM - 10:00 PM
+            </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-gray-700 flex gap-2">
+            <h3
+              data-aos="fade-up"
+              className="text-xl font-semibold text-gray-700 flex gap-2"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -55,10 +69,15 @@ const GoogleMap = () => {
               </svg>
               01, Dhaka, Bangladesh
             </h3>
-            <p className="text-gray-600">Event Address</p>
+            <p data-aos="fade-up" className="text-gray-600">
+              Event Address
+            </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-gray-700 flex gap-2">
+            <h3
+              data-aos="fade-up"
+              className="text-xl font-semibold text-gray-700 flex gap-2"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -75,7 +94,9 @@ const GoogleMap = () => {
               </svg>
               008844018844
             </h3>
-            <p className="text-gray-600">Phone Number</p>
+            <p data-aos="fade-up" className="text-gray-600">
+              Phone Number
+            </p>
           </div>
         </div>
 

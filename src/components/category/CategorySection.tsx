@@ -48,13 +48,19 @@ const CategorySection = () => {
   return (
     <section className="my-20 lg:my-28  px-3 lg:px-0 ">
       <div className="mx-auto text-center max-w-3xl mb-8 space-y-2">
-        <p className="text-orange-500 font-semibold text-sm md:text-lg">
+        <p
+          data-aos="fade-up"
+          className="text-orange-500 font-semibold text-sm md:text-lg"
+        >
           MEET THE FAMILY
         </p>
-        <h2 className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif"
+        >
           What we have in store for you.
         </h2>
-        <p className="text-gray-600">
+        <p data-aos="fade-up" className="text-gray-600">
           Find everything you need for your next adventure, from high-quality
           tents and sleeping bags to cooking equipment and outdoor accessories.
           Browse our carefully curated categories to elevate your camping
@@ -65,6 +71,7 @@ const CategorySection = () => {
         {categoryData.map((category) => (
           <div
             key={category.id}
+            data-aos="fade-up"
             className="h-[490px]  bg-slate-500 rounded-lg group overflow-hidden relative"
           >
             <img

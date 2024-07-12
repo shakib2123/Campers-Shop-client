@@ -16,9 +16,30 @@ export const baseApi = createApi({
 
     getProducts: builder.query({
       query: (query) => {
-        console.log(query);
+        const params = new URLSearchParams();
+
+        if (query?.search) {
+          params.append("searchValue", query.search);
+        }
+
+        if (query?.category) {
+          params.append("category", query.category);
+        }
+
+        if (query?.minPrice) {
+          params.append("minPrice", query.minPrice);
+        }
+
+        if (query?.maxPrice) {
+          params.append("maxPrice", query.maxPrice);
+        }
+
+        if (query?.sort) {
+          params.append("sort", query.sort);
+        }
+
         return {
-          url: `/products?searchValue=${query?.search}&sort=${query?.sort}&category=${query?.category}&minPrice=${query?.minPrice}&maxPrice=${query?.maxPrice}`,
+          url: `/products?${params.toString()}`,
           method: "GET",
         };
       },

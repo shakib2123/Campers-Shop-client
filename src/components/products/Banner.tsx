@@ -8,10 +8,16 @@ const ProductsBanner = () => {
     >
       <div className="bg-black/10 h-full w-full flex flex-col justify-end py-10">
         <div className="mx-auto text-center max-w-xl mb-8 space-y-2">
-          <p className="text-orange-500 font-semibold text-sm md:text-lg">
+          <p
+            data-aos="fade-up"
+            className="text-orange-500 font-semibold text-sm md:text-lg"
+          >
             Products
           </p>
-          <h2 className="text-3xl md:text-4xl text-gray-100 font-bold text-center font-young-serif">
+          <h2
+            data-aos="fade-up"
+            className="text-3xl md:text-4xl text-gray-100 font-bold text-center font-young-serif"
+          >
             Gear for every weather, every mood & every occasion.
           </h2>
         </div>

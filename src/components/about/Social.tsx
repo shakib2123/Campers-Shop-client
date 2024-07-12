@@ -10,15 +10,24 @@ const Social = () => {
       >
         <div className="bg-black/40 h-full w-full flex flex-col justify-end py-10  rounded-lg">
           <div className="mx-auto text-center max-w-2xl mb-8 space-y-2">
-            <p className="text-orange-500 font-semibold text-sm md:text-lg">
+            <p
+              data-aos="fade-up"
+              className="text-orange-500 font-semibold text-sm md:text-lg"
+            >
               CONTACT US
             </p>
-            <h2 className="text-xl md:text-4xl text-gray-100 font-bold text-center font-young-serif">
+            <h2
+              data-aos="fade-up"
+              className="text-xl md:text-4xl text-gray-100 font-bold text-center font-young-serif"
+            >
               Get in Touch With Campers Shop
             </h2>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
+          <div
+            data-aos="fade-up"
+            className="flex items-center justify-center gap-6"
+          >
             <Link to="https://web.facebook.com/" className="text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Label } from "../ui/label";
+import Loader from "../Loader/Loader";
 
 const Products = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -50,8 +51,10 @@ const Products = () => {
     maxPrice,
   });
 
+  let loading;
+
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (loading = <Loader height={"h-[500px]"} />);
   }
 
   return (
@@ -163,9 +166,11 @@ const Products = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-80 ">
-        {data?.data?.map((product) => (
-          <ProductCart key={product._id} product={product} />
-        ))}
+        {isLoading
+          ? loading
+          : data?.data?.map((product) => (
+              <ProductCart key={product._id} product={product} />
+            ))}
       </div>
     </div>
   );

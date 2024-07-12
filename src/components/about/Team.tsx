@@ -49,13 +49,19 @@ const Team = () => {
   return (
     <section className="my-20 lg:my-28 max-w-screen-xl mx-auto px-3 lg:px-0">
       <div className="mx-auto text-center max-w-3xl mb-8 space-y-2">
-        <p className="text-orange-500 font-semibold text-sm md:text-lg">
+        <p
+          data-aos="fade-up"
+          className="text-orange-500 font-semibold text-sm md:text-lg"
+        >
           OUR TEAM
         </p>
-        <h2 className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif"
+        >
           Meet Our Team
         </h2>
-        <p className="text-gray-600">
+        <p data-aos="fade-up" className="text-gray-600">
           Our dedicated team of camping enthusiasts is passionate about
           providing you with the best products and service. Each member brings a
           unique set of skills and experiences to ensure your camping adventures
@@ -65,7 +71,7 @@ const Team = () => {
       </div>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
         {teamData.map((item) => (
-          <div key={item.id} className="px-12">
+          <div data-aos="fade-up" key={item.id} className="px-12">
             <div>
               <img
                 className="w-full h-full rounded-[70px]"

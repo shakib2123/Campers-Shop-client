@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { addToCart } from "@/redux/features/CartSlice";
 import { toast } from "sonner";
+import Loader from "@/components/Loader/Loader";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -32,8 +33,9 @@ const ProductDetails = () => {
 
     toast.success("Product added to cart");
   };
+
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader height={"h-[600px]"} />;
   }
 
   return (

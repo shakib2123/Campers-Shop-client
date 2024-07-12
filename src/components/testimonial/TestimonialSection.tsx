@@ -63,13 +63,19 @@ const TestimonialSection = () => {
   return (
     <div>
       <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-        <p className="text-orange-500 font-semibold text-sm md:text-lg">
+        <p
+          data-aos="fade-up"
+          className="text-orange-500 font-semibold text-sm md:text-lg"
+        >
           TESTIMONIALS
         </p>
-        <h2 className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif"
+        >
           What Our Customers Are Saying.
         </h2>
-        <p className="text-gray-600">
+        <p data-aos="fade-up" className="text-gray-600">
           We let our work speak for itself. Here are some of the testimonials
           from our clients.
         </p>
@@ -89,7 +95,7 @@ const TestimonialSection = () => {
                   className="md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="p-1 ">
-                    <Card>
+                    <Card data-aos="fade-left">
                       <CardContent className="flex h-[310px] items-center justify-center p-6">
                         <div className="flex flex-col justify-between gap-8">
                           <div className="space-y-4">

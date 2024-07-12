@@ -3,7 +3,10 @@ import { Button } from "../ui/button";
 
 const ProductCart = ({ product }) => {
   return (
-    <div className=" lg:max-w-80 h-full rounded-lg border border-gray-200 p-4 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-100">
+    <div
+      data-aos="fade-up"
+      className=" lg:max-w-80 h-full rounded-lg border border-gray-200 p-4 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-100"
+    >
       <div className="flex-1 flex-grow overflow-hidden rounded-lg">
         <img
           className="w-full object-cover h-64 md:h-72 lg:h-56 rounded-lg"

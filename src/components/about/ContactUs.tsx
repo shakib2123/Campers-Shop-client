@@ -8,18 +8,24 @@ const ContactUs = () => {
         <img className="" src={contactImage} alt="" />
       </div>
       <div className=" flex-1 space-y-2  lg:space-y-4">
-        <h2 className="text-3xl lg:text-5xl font-young-serif  font-bold text-gray-800">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl lg:text-5xl font-young-serif  font-bold text-gray-800"
+        >
           CONTACT US
         </h2>
-        <h2 className="text-3xl lg:text-5xl font-young-serif text-orange-500">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl lg:text-5xl font-young-serif text-orange-500"
+        >
           TODAY
         </h2>
-        <p className="text-gray-600">
+        <p data-aos="fade-up" className="text-gray-600">
           We'd love to hear from you! Reach out to us with any questions or
           feedback, and we'll get back to you as soon as possible.
         </p>
 
-        <div className="flex items-center gap-4">
+        <div data-aos="fade-up" className="flex items-center gap-4">
           <Link to="https://web.facebook.com/" className="text-gray-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +74,7 @@ const ContactUs = () => {
           </Link>
         </div>
 
-        <div className="flex  items-center gap-1 lg:gap-4">
+        <div data-aos="fade-up" className="flex  items-center gap-1 lg:gap-4">
           <div className="flex items-center w-fit text-[12px] lg:text-lg font-medium lg:font-bold gap-1 p-2 text-gray-700 bg-green-200 rounded-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
