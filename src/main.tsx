@@ -13,7 +13,7 @@ import AOS from "aos";
 
 // Initialize AOS
 AOS.init({
-  duration: 700,
+  duration: 600,
   easing: "ease-in-out",
   once: true,
 });

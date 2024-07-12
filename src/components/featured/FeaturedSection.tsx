@@ -1,9 +1,10 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "../ProductCart/ProductCart";
+import ProductCart from "../ProductCart/ProductCard";
 import Loader from "../Loader/Loader";
+import Error from "../animation/Error";
 
 const FeaturedSection = () => {
-  const { data, isLoading } = useGetProductsQuery(undefined);
+  const { data, isLoading, isError } = useGetProductsQuery(undefined);
 
   let loadingState;
 
@@ -11,7 +12,7 @@ const FeaturedSection = () => {
     return (loadingState = <Loader height={"h-[500px]"} />);
   }
   return (
-    <div className="bg-green-200 min-h-[600px] py-16 mb-28">
+    <div className="bg-green-200 min-h-[600px] py-16 mb-28 px-3 ">
       <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
         <h2
           data-aos="fade-up"
@@ -25,14 +26,24 @@ const FeaturedSection = () => {
           design, ensuring you have the best experience on your next adventure.
         </p>
       </div>
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-80 ">
-        {isLoading
-          ? loadingState
-          : data?.data
-              ?.slice(-4)
-              .map((product) => (
-                <ProductCart key={product._id} product={product} />
-              ))}
+      <div
+        className={` ${
+          isError ? "flex items-center justify-center" : "grid"
+        } max-w-screen-xl mx-auto  grid-cols-1 lg:grid-cols-2 gap-6 min-h-80`}
+      >
+        {isLoading ? (
+          loadingState
+        ) : isError ? (
+          <div className="max-w-64">
+            <Error />
+          </div>
+        ) : (
+          data?.data
+            ?.slice(-4)
+            .map((product) => (
+              <ProductCart key={product._id} product={product} />
+            ))
+        )}
       </div>
     </div>
   );

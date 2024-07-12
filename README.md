@@ -1,4 +1,4 @@
-# 🏕️ Campers Shop
+# 🏕️ Campers Shop Front-End
 
 ## 🤖 Introduction
 
@@ -9,7 +9,7 @@ adventurers.
 
 ## 🔗 Live URL
 
-[Car Rental Reservation System](https://car-rental-reservation-system-l2.vercel.app)
+[Campers Shop](https://car-rental-reservation-system-l2.vercel.app)
 
 ## 📝 Project Description
 
@@ -85,7 +85,7 @@ Make sure you have the following installed on your machine:
 
    ```bash
    git clone https://github.com/shakib2123/Campers-Shop-client
-   cd Car-Rental-Reservation-System-L2
+   cd Campers-Shop-client
    ```
 
 2. **Install the project dependencies using npm:**

@@ -1,5 +1,5 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "../ProductCart/ProductCart";
+import ProductCart from "../ProductCart/ProductCard";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -19,6 +19,8 @@ import {
 } from "../ui/dropdown-menu";
 import { Label } from "../ui/label";
 import Loader from "../Loader/Loader";
+import NoDataFound from "../animation/NoDataFound";
+import Error from "../animation/Error";
 
 const Products = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -41,9 +43,7 @@ const Products = () => {
     setMaxPrice("");
   };
 
-  console.log(sortValue);
-
-  const { data, isLoading, refetch } = useGetProductsQuery({
+  const { data, isLoading, isError } = useGetProductsQuery({
     search: searchValue,
     sort: sortValue,
     category,
@@ -165,12 +165,26 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-80 ">
-        {isLoading
-          ? loading
-          : data?.data?.map((product) => (
-              <ProductCart key={product._id} product={product} />
-            ))}
+      <div
+        className={`${
+          data?.data.length > 0 ? "grid" : "flex justify-center items-center"
+        } grid-cols-1 lg:grid-cols-2 gap-6 min-h-96 `}
+      >
+        {isLoading ? (
+          loading
+        ) : isError ? (
+          <div className="pt-12 max-w-64">
+            <Error />
+          </div>
+        ) : data?.data.length > 0 ? (
+          data?.data?.map((product) => (
+            <ProductCart key={product._id} product={product} />
+          ))
+        ) : (
+          <div className="pt-12 max-w-64">
+            <NoDataFound />
+          </div>
+        )}
       </div>
     </div>
   );

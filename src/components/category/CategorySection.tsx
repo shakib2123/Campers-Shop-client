@@ -75,11 +75,11 @@ const CategorySection = () => {
             className="h-[490px]  bg-slate-500 rounded-lg group overflow-hidden relative"
           >
             <img
-              className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
+              className="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-200"
               src={category.image}
               alt="category-image"
             />
-            <div className="absolute inset-0 flex flex-col items-center pt-12 bg-black/45 group-hover:bg-black/50 transition-colors duration-200 px-[70px] text-center gap-2">
+            <div className="absolute inset-0 flex flex-col items-center pt-12 bg-black/45 group-hover:bg-black/60 transition-colors duration-200 px-[70px] text-center gap-2 ">
               <h3 className="text-3xl font-medium text-gray-100 font-young-serif">
                 {category.name}
               </h3>

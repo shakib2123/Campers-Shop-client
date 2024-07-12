@@ -8,8 +8,8 @@ import FeaturedSection from "@/components/featured/FeaturedSection";
 const HomePage = () => {
   return (
     <div>
+      <HeroSection />
       <div className="max-w-screen-xl mx-auto">
-        <HeroSection />
         <BestSellingSection />
         <CategorySection />
       </div>

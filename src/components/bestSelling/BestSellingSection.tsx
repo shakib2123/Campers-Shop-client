@@ -1,11 +1,12 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "../ProductCart/ProductCart";
+import ProductCart from "../ProductCart/ProductCard";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import Error from "../animation/Error";
 
 const BestSellingSection = () => {
-  const { data, isLoading } = useGetProductsQuery(undefined);
+  const { data, isLoading, isError } = useGetProductsQuery(undefined);
 
   let loadingState;
 
@@ -35,14 +36,24 @@ const BestSellingSection = () => {
           and see why they're our customers' favorites.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-80 ">
-        {isLoading
-          ? loadingState
-          : data?.data
-              ?.slice(0, 4)
-              .map((product) => (
-                <ProductCart key={product._id} product={product} />
-              ))}
+      <div
+        className={`${
+          isError ? "flex items-center justify-center" : "grid"
+        } grid-cols-1 lg:grid-cols-2  gap-6 min-h-80 `}
+      >
+        {isLoading ? (
+          loadingState
+        ) : isError ? (
+          <div className="max-w-64">
+            <Error />
+          </div>
+        ) : (
+          data?.data
+            ?.slice(0, 4)
+            .map((product) => (
+              <ProductCart key={product._id} product={product} />
+            ))
+        )}
       </div>
 
       <div data-aos="fade-up" className="flex justify-center">

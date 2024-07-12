@@ -97,11 +97,14 @@ const FAQSection = () => {
               data-aos="fade-up"
               value={`item-${item.id}`}
               key={item.id}
+              className="border-gray-800 px-5 rounded-lg hover:border-orange-500 transition-colors duration-300"
             >
-              <AccordionTrigger className="text-xl text-gray-800">
+              <AccordionTrigger className="hover:no-underline text-xl text-gray-800">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionContent className="text-base">
+                {item.answer}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
