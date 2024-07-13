@@ -1,6 +1,6 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "../ProductCart/ProductCard";
-import { useForm } from "react-hook-form";
+import ProductCart, { TProduct } from "../ProductCart/ProductCard";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import {
@@ -22,6 +22,10 @@ import Loader from "../Loader/Loader";
 import NoDataFound from "../animation/NoDataFound";
 import Error from "../animation/Error";
 
+type TFormData = {
+  search: string;
+};
+
 const Products = () => {
   const [searchValue, setSearchValue] = useState("");
   const [sortValue, setSortValue] = useState("");
@@ -29,9 +33,9 @@ const Products = () => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<TFormData>();
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<TFormData> = (data) => {
     setSearchValue(data.search);
   };
 
@@ -177,7 +181,7 @@ const Products = () => {
             <Error />
           </div>
         ) : data?.data.length > 0 ? (
-          data?.data?.map((product) => (
+          data?.data?.map((product: TProduct) => (
             <ProductCart key={product._id} product={product} />
           ))
         ) : (

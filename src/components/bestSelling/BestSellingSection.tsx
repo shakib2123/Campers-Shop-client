@@ -1,5 +1,5 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "../ProductCart/ProductCard";
+import ProductCart, { TProduct } from "../ProductCart/ProductCard";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
@@ -50,7 +50,7 @@ const BestSellingSection = () => {
         ) : (
           data?.data
             ?.slice(0, 4)
-            .map((product) => (
+            .map((product: TProduct) => (
               <ProductCart key={product._id} product={product} />
             ))
         )}

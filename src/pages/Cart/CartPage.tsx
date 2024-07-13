@@ -1,5 +1,6 @@
 import NoDataFound from "@/components/animation/NoDataFound";
 import Loader from "@/components/Loader/Loader";
+import { TProduct } from "@/components/ProductCart/ProductCard";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -15,6 +16,7 @@ import {
   decreaseQuantity,
   deleteItem,
   increaseQuantity,
+  TCartItem,
 } from "@/redux/features/CartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { Link } from "react-router-dom";
@@ -31,8 +33,10 @@ const CartPage = () => {
     0
   );
 
-  const isDisabled = (item) => {
-    const result = products.data.find((data) => data._id === item._id);
+  const isDisabled = (item: TCartItem) => {
+    const result = products.data.find(
+      (data: TProduct) => data._id === item._id
+    );
     return result.quantity === item.quantity || result.stock === false;
   };
 

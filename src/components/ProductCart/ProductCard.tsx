@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import Rating from "react-rating";
-import { Star } from "lucide-react";
+import { Rating } from "@smastrom/react-rating";
 
-const ProductCard = ({ product }) => {
+export type TProduct = {
+  _id: string;
+  category: string;
+  description: string;
+  image: string;
+  name: string;
+  price: number;
+  quantity: number;
+  rating: number;
+  stock: boolean;
+  __v: number;
+};
+
+type ProductCardProps = {
+  product: TProduct;
+};
+
+const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div
       data-aos="fade-up"
@@ -19,13 +35,9 @@ const ProductCard = ({ product }) => {
       <div className="flex-1 flex flex-col gap-5">
         <div className="space-y-3">
           <h3 className="text-xl font-bold text-gray-700 ">{product?.name}</h3>
-          <Rating
-            emptySymbol={<Star size={15} color="orange" />}
-            fullSymbol={<Star size={15} color="orange" fill="orange" />}
-            fractions={2}
-            initialRating={product?.rating}
-            stop={5}
-          />
+          <div className="max-w-24">
+            <Rating className="size-6 w-fit" value={product?.rating} />
+          </div>
           <h3 className="text-xl font-bold text-orange-500 flex items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"

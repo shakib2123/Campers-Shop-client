@@ -1,5 +1,5 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "../ProductCart/ProductCard";
+import ProductCart, { TProduct } from "../ProductCart/ProductCard";
 import Loader from "../Loader/Loader";
 import Error from "../animation/Error";
 
@@ -40,7 +40,7 @@ const FeaturedSection = () => {
         ) : (
           data?.data
             ?.slice(-4)
-            .map((product) => (
+            .map((product: TProduct) => (
               <ProductCart key={product._id} product={product} />
             ))
         )}

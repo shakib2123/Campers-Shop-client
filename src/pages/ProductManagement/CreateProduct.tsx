@@ -3,9 +3,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAddProductMutation } from "@/redux/api/baseApi";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+
+export type TFormData = {
+  name: string;
+  price: number;
+  description: string;
+  image: FileList;
+  quantity: number;
+  category: string;
+  rating: number;
+};
 
 const apiKey = import.meta.env.VITE_IMAGEBB_API_KEY;
 const url = `https://api.imgbb.com/1/upload?key=${apiKey}`;
@@ -21,9 +31,9 @@ const CreateProduct = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<TFormData>();
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<TFormData> = async (data) => {
     const formData = new FormData();
     formData.append("image", data.image[0]);
     setLoading(true);

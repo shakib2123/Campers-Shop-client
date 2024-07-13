@@ -1,13 +1,14 @@
 import { useGetSingleProductQuery } from "@/redux/api/baseApi";
 import { useParams } from "react-router-dom";
-import Rating from "react-rating";
-import { Star } from "lucide-react";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { addToCart } from "@/redux/features/CartSlice";
 import { toast } from "sonner";
 import Loader from "@/components/Loader/Loader";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import "./ImageMagnifier.css";
 import {
@@ -37,7 +38,7 @@ const ProductDetails = () => {
   const currentProduct = cart?.find((item) => item._id === id);
 
   const handleAddToCart = async () => {
-    const { quantity: oldQuantity, ...otherData } = data.data;
+    const { __v, quantity: oldQuantity, ...otherData } = data.data;
 
     const cartData = {
       ...otherData,
@@ -49,7 +50,7 @@ const ProductDetails = () => {
     toast.success("Product added to cart");
   };
 
-  const handleMouseHover = (e) => {
+  const handleMouseHover = (e: React.MouseEvent<HTMLDivElement>) => {
     // Corrected the usage of getBoundingClientRect
     const { left, top, width, height } =
       e.currentTarget.getBoundingClientRect();
@@ -106,13 +107,9 @@ const ProductDetails = () => {
           <h4 className="text-gray-800 font-bold ">
             CATEGORY: <span className="text-sm">{data?.data?.category}</span>
           </h4>
-          <Rating
-            emptySymbol={<Star size={15} color="orange" />}
-            fullSymbol={<Star size={15} color="orange" fill="orange" />}
-            fractions={2}
-            initialRating={data?.data?.rating}
-            stop={5}
-          />
+          <div className="max-w-24">
+            <Rating className="size-6 w-fit" value={data?.data?.rating} />
+          </div>
         </div>
         <div className="py-4 border-b-2 border-gray-800  space-y-6">
           <h2 className="text-3xl font-bold text-gray-800">

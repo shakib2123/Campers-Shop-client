@@ -7,9 +7,10 @@ import {
   useUpdateProductMutation,
 } from "@/redux/api/baseApi";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
+import { TFormData } from "./CreateProduct";
 
 const apiKey = import.meta.env.VITE_IMAGEBB_API_KEY;
 const url = `https://api.imgbb.com/1/upload?key=${apiKey}`;
@@ -30,13 +31,13 @@ const UpdateProduct = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<TFormData>();
 
   if (isProductLoading) {
     return <Loader height={"h-500px"} />;
   }
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<TFormData> = async (data) => {
     const formData = new FormData();
     formData.append("image", data.image[0]);
     setLoading(true);
@@ -154,7 +155,7 @@ const UpdateProduct = () => {
               defaultValue={product?.data?.price}
               {...register("price", { required: true })}
             />
-            {errors.number && (
+            {errors.price && (
               <p className="text-red-500 text-sm ">Price is required</p>
             )}
           </div>

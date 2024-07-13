@@ -1,6 +1,6 @@
 import { FallingLines } from "react-loader-spinner";
 
-const Loader = ({ height }) => {
+const Loader = ({ height }: { height: string }) => {
   return (
     <div
       className={`max-w-screen-xl mx-auto ${height} flex items-center justify-center`}
@@ -9,7 +9,7 @@ const Loader = ({ height }) => {
         color="#4fa94d"
         width="100"
         visible={true}
-        ariaLabel="falling-circles-loading"
+        aria-label="falling-circles-loading"
       />
     </div>
   );

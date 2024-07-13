@@ -15,19 +15,26 @@ import {
 import { useAppSelector } from "@/redux/hook";
 import { Label } from "@radix-ui/react-label";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+};
+
 const Checkout = () => {
-  const [onCash, setIsOnCash] = useState("");
+  const [onCash, setIsOnCash] = useState<string>("");
   const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
   const [addPayment] = useAddOrderMutation();
   const [updateCartInfo] = useUpdateCartInfoMutation();
@@ -40,7 +47,7 @@ const Checkout = () => {
     };
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     const orderData = {
       name: data.name,
       email: data.email,

@@ -1,6 +1,7 @@
 import Error from "@/components/animation/Error";
 import NoDataFound from "@/components/animation/NoDataFound";
 import Loader from "@/components/Loader/Loader";
+import { TProduct } from "@/components/ProductCart/ProductCard";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -106,7 +107,7 @@ const ProductManagement = () => {
             <TableBody>
               {isLoading
                 ? loading
-                : data?.data?.map((item) => (
+                : data?.data?.map((item: TProduct) => (
                     <TableRow data-aos="fade-up" key={item._id}>
                       <TableCell>
                         <img

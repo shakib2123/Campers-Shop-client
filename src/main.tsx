@@ -9,6 +9,8 @@ import { Toaster } from "sonner";
 
 import "aos/dist/aos.css";
 
+import "@smastrom/react-rating/style.css";
+
 import AOS from "aos";
 
 // Initialize AOS
