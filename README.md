@@ -9,7 +9,7 @@ adventurers.
 
 ## 🔗 Live URL
 
-[Campers Shop](https://car-rental-reservation-system-l2.vercel.app)
+[Campers Shop](https://campers-shop-client.vercel.app)
 
 ## 📝 Project Description
 
