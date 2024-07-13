@@ -123,30 +123,30 @@ VITE_IMAGEBB_API_KEY=your_secret
 1. **Homepage:** Browse the hero section, best-selling products, categories,
    featured products, and unique sections like video blogs and testimonials.
 
-   ![Homepage Screenshot](./src/assets/images/home.png)
+   ![Homepage page](./src/assets/images/home.png)
 
 2. **Products Page:** Use the search bar to find products by name or
    description. Apply filters for categories and price range, and sort products
    by price.
 
-   ![Homepage Screenshot](./src/assets/images/products.png)
+   ![Products page](./src/assets/images/products.png)
 
 3. **Product Details Page:** View detailed information about a product,
    including name, price, stock-quantity, description, category, ratings, and
    images. Use the image magnifier effect for a closer look.
 
-   ![Homepage Screenshot](./src/assets/images/product-details.png)
+   ![Product details page](./src/assets/images/product-details.png)
 
 4. **Cart Page:** Manage your cart by adjusting quantities, removing products,
    and viewing dynamic pricing details. Place your order if the product is in
-   stock. ![Homepage Screenshot](./src/assets/images/cart.png)
+   stock. ![Cart page](./src/assets/images/cart.png)
 
 5. **Checkout Page:** Fill in your details and choose a payment method. Use Cash
    on Delivery or Stripe (optional) for payment.
 
-   ![Homepage Screenshot](./src/assets/images/checkout.png)
+   ![Checkout page](./src/assets/images/checkout.png)
 
 6. **About Us Page:** Find contact information, map location, social media
    links, mission statement, and team member bios.
 
-   ![Homepage Screenshot](./src/assets/images/about.png)
+   ![About page](./src/assets/images/about.png)
