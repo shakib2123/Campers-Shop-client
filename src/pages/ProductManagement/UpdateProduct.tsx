@@ -1,3 +1,4 @@
+import Loader from "@/components/Loader/Loader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -5,12 +6,18 @@ import {
   useGetSingleProductQuery,
   useUpdateProductMutation,
 } from "@/redux/api/baseApi";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 
+const apiKey = import.meta.env.VITE_IMAGEBB_API_KEY;
+const url = `https://api.imgbb.com/1/upload?key=${apiKey}`;
+
 const UpdateProduct = () => {
   const { id } = useParams();
+
+  const [loading, setLoading] = useState(false);
 
   const { data: product, isLoading: isProductLoading } =
     useGetSingleProductQuery(id);
@@ -26,19 +33,33 @@ const UpdateProduct = () => {
   } = useForm();
 
   if (isProductLoading) {
-    return <div>Loading...</div>;
+    return <Loader height={"h-500px"} />;
   }
 
   const onSubmit = async (data) => {
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
+    setLoading(true);
+    const response = await fetch(url, {
+      method: "POST",
+      body: formData,
+    });
+
+    const imgData = await response.json();
+
+    setLoading(false);
+
     const productData = {
       name: data.name,
       price: data.price,
       description: data.description,
-      image: data.image,
+      image: imgData.data.url,
       quantity: data.quantity,
       category: data.category,
       rating: data.rating,
     };
+
+    console.log(productData);
 
     const updateProductData = {
       id,
@@ -57,7 +78,7 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-6">
+    <div className="max-w-lg mx-auto mt-6 min-h-96">
       <div>
         <h1 className="text-3xl font-bold mb-5 text-center text-gray-800">
           Update A Product
@@ -102,12 +123,12 @@ const UpdateProduct = () => {
             </Label>
             <Input
               className=" border border-gray-400"
-              defaultValue={product?.data?.image}
               id="image"
+              type="file"
               {...register("image", { required: true })}
             />
             {errors.image && (
-              <p className="text-red-500 text-sm ">Image is required</p>
+              <p className="text-red-500 text-sm">Image is required</p>
             )}
           </div>
 
@@ -181,7 +202,7 @@ const UpdateProduct = () => {
             className="w-full bg-green-500 hover:bg-green-600"
             type="submit"
           >
-            {isLoading ? "Loading..." : "Update Product"}
+            {loading || isLoading ? "Loading..." : "Update Product"}
           </Button>
         </div>
       </form>

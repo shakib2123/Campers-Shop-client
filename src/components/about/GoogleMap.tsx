@@ -1,27 +1,25 @@
 const GoogleMap = () => {
   return (
     <section className="my-20 lg:my-28 px-3  min-h-[600px] max-w-screen-xl mx-auto">
-      <div className="mb-5">
+      <div className="mb-10 max-w-2xl mx-auto">
         <h2
           data-aos="fade-up"
           className="text-3xl md:text-4xl text-gray-800 font-bold text-center font-young-serif"
         >
           Our Location
         </h2>
+        <p className="text-gray-600 text-center">
+          Visit us at 123 Adventure Lane, Campersville. Explore our extensive
+          range of camping gear and get personalized advice from our expert
+          team. We're here to enhance your outdoor adventures!
+        </p>
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-between md:items-center">
-        <div className="flex-1 space-y-10 mt-3 lg:mt-0">
-          <h2
-            data-aos="fade-up"
-            className="text-2xl md:text-3xl font-bold text-gray-800"
-          >
-            Campers Shop Location
-          </h2>
-
-          <div>
+        <div className="flex-1 mt-3 lg:mt-0">
+          <div className="py-8 space-y-3 pl-3 border-l-8 border-orange-500">
             <h3
               data-aos="fade-up"
-              className="text-xl font-semibold text-gray-700 flex gap-2"
+              className="text-2xl lg:text-3xl font-bold text-gray-800 flex items-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +27,7 @@ const GoogleMap = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-6"
+                className="size-6 lg:size-8"
               >
                 <path
                   strokeLinecap="round"
@@ -39,14 +37,17 @@ const GoogleMap = () => {
               </svg>
               17 November - 22 November
             </h3>
-            <p data-aos="fade-up" className="text-gray-600">
+            <p
+              data-aos="fade-up"
+              className="text-gray-600 text-lg font-semibold"
+            >
               8:00 AM - 10:00 PM
             </p>
           </div>
-          <div>
+          <div className="py-8 space-y-3 pl-3 border-l-8 border-gray-500">
             <h3
               data-aos="fade-up"
-              className="text-xl font-semibold text-gray-700 flex gap-2"
+              className="text-2xl lg:text-3xl font-bold text-gray-800 flex items-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +55,7 @@ const GoogleMap = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-6"
+                className="size-6 lg:size-8"
               >
                 <path
                   strokeLinecap="round"
@@ -69,14 +70,17 @@ const GoogleMap = () => {
               </svg>
               01, Dhaka, Bangladesh
             </h3>
-            <p data-aos="fade-up" className="text-gray-600">
+            <p
+              data-aos="fade-up"
+              className="text-gray-600 text-lg font-semibold"
+            >
               Event Address
             </p>
           </div>
-          <div>
+          <div className="py-8 space-y-3 pl-3 border-l-8 border-gray-500">
             <h3
               data-aos="fade-up"
-              className="text-xl font-semibold text-gray-700 flex gap-2"
+              className="text-2xl lg:text-3xl font-bold text-gray-800 flex items-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +88,7 @@ const GoogleMap = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-6"
+                className="size-6 lg:size-8"
               >
                 <path
                   strokeLinecap="round"
@@ -94,7 +98,10 @@ const GoogleMap = () => {
               </svg>
               008844018844
             </h3>
-            <p data-aos="fade-up" className="text-gray-600">
+            <p
+              data-aos="fade-up"
+              className="text-gray-600 text-lg font-semibold"
+            >
               Phone Number
             </p>
           </div>
