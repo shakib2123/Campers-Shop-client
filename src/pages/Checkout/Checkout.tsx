@@ -51,9 +51,9 @@ const Checkout = () => {
 
     try {
       const res = await addPayment(orderData).unwrap();
-      console.log(res);
+
       const result = await updateCartInfo(updatedProductData).unwrap();
-      console.log(result);
+
       if (res?.success && result?.success) {
         toast.success(res?.message);
         navigate("/order-success");

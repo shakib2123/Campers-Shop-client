@@ -135,11 +135,11 @@ VITE_IMAGEBB_API_KEY=your_secret
    including name, price, stock-quantity, description, category, ratings, and
    images. Use the image magnifier effect for a closer look.
 
-   ![Homepage Screenshot](./src/assets/images/products.png)
+   ![Homepage Screenshot](./src/assets/images/product-details.png)
 
 4. **Cart Page:** Manage your cart by adjusting quantities, removing products,
    and viewing dynamic pricing details. Place your order if the product is in
-   stock. ![Homepage Screenshot](./src/assets/images/products.png)
+   stock. ![Homepage Screenshot](./src/assets/images/cart.png)
 
 5. **Checkout Page:** Fill in your details and choose a payment method. Use Cash
    on Delivery or Stripe (optional) for payment.

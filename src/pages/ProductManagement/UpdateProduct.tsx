@@ -59,8 +59,6 @@ const UpdateProduct = () => {
       rating: data.rating,
     };
 
-    console.log(productData);
-
     const updateProductData = {
       id,
       updatedData: productData,
